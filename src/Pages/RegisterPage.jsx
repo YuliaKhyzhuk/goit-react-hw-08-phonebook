@@ -2,7 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-import { authOperations } from 'redux/auth';
+import { register } from '../redux/auth/authOperations';
+// import {selectIsLoggedIn} from 'redux/auth/authSelectors';
+
 import Section from 'components/Section/Section';
 
 const RegisterPage = () => {
@@ -26,7 +28,7 @@ const RegisterPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
+    dispatch(register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');

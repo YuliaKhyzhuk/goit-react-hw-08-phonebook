@@ -2,7 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-import { authOperations } from 'redux/auth';
+// import { authOperations } from '../redux/auth';
+import { login } from '../redux/auth/authOperations';
+
 import Section from 'components/Section/Section';
 
 
@@ -24,7 +26,7 @@ const LoginPage = () =>  {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
+    dispatch(login({ email, password }));
     setEmail('');
     setPassword('');
   };

@@ -3,8 +3,8 @@ import { GlobalStyle } from './GlobalStyle';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { RestrictedRoute } from 'RestrictedRoute';
-import { PrivateRoute } from 'PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';

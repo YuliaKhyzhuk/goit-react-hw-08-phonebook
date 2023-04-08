@@ -12,7 +12,7 @@ const HomePage = () => {
         {!isLoggedIn ? 
         (<h3>
           Please <NavLink to="/register">register</NavLink> or
-          <NavLink to="/login">log in</NavLink> to continue!
+          <NavLink to="/login"> log in</NavLink> to continue!
         </h3>) 
         : (
         <h3>
