@@ -6,7 +6,7 @@ import { authOperations } from 'redux/auth';
 import Section from 'components/Section/Section';
 
 
-function LoginPage() {
+const LoginPage = () =>  {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
