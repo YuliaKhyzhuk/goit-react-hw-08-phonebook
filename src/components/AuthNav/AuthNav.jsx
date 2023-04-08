@@ -1,4 +1,12 @@
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "redux/auth/authSelectors";
+import { NavLink } from 'react-router-dom';
 
+export const AuthNav = () => {
+  return (
+    <>
+      <NavLink to="/register">Register</NavLink>
+      <NavLink to="/login">Login</NavLink>
+    </>
+  );
+};
 
+export default AuthNav;
