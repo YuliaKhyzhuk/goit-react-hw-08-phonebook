@@ -1,18 +1,31 @@
 import AuthNav from 'components/AuthNav/AuthNav';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/auth/authSelectors';
+
+import {
+  HeaderContainer,
+  NavContainer,
+  StyledLink,
+  LoginNavContainer,
+} from './Header.styled';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <div>
-      <NavLink> Home </NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </div>
+    <>
+      <HeaderContainer>
+        <NavContainer>
+          <StyledLink to="/"> Home </StyledLink>
+          {isLoggedIn && <StyledLink to="/contacts">Contacts</StyledLink>}
+        </NavContainer>
+        <LoginNavContainer>
+          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          {/* <Outlet /> */}
+        </LoginNavContainer>
+      </HeaderContainer>
+    </>
   );
 };
 

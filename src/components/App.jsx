@@ -8,7 +8,6 @@ import { PrivateRoute } from './PrivateRoute';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/operations';
-// import { selectError, selectIsLoading } from 'redux/selectors';
 
 import HomePage from 'Pages/HomePage';
 
@@ -37,6 +36,8 @@ export const App = () => {
         flexDirection: 'column',
         fontSize: 16,
         color: '#010101',
+        margin: 16,
+        textAlign: 'center',
       }}
     >
       <Suspense fallback={<Loader />}>

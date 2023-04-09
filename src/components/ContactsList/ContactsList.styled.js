@@ -9,8 +9,6 @@ padding-inline-start: 0;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  // flex-basis: calc(100% / 3 - 20px);
-  // padding: 16px 0 16px 0;
   font-weight: bold;
   font-size: 12px;
   // background-color: ${props => props.theme.colors.backgroundYellow};

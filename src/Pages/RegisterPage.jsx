@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import { register } from '../redux/auth/authOperations';
-// import {selectIsLoggedIn} from 'redux/auth/authSelectors';
 
 import Section from 'components/Section/Section';
+
+import Button from '@mui/material/Button';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
@@ -37,9 +38,23 @@ const RegisterPage = () => {
   return (
     <div>
       <Section title="Registration">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>
-            Имя
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 10,           
+          }}
+        >
+          <label
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 10,
+            }}
+          >
+            Name
             <input
               type="text"
               name="name"
@@ -48,7 +63,13 @@ const RegisterPage = () => {
             />
           </label>
 
-          <label>
+          <label
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 10,
+            }}
+          >
             Email
             <input
               type="email"
@@ -58,7 +79,13 @@ const RegisterPage = () => {
             />
           </label>
 
-          <label>
+          <label
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: 10,
+            }}
+          >
             Password
             <input
               type="password"
@@ -68,7 +95,9 @@ const RegisterPage = () => {
             />
           </label>
 
-          <button type="submit">Register</button>
+          <Button type="submit" variant="contained" color="success">
+            Register
+          </Button>
         </form>
       </Section>
     </div>
