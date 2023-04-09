@@ -28,6 +28,7 @@ export const login = createAsyncThunk('auth/login', async (credentials, thunkAPI
     token.set(data.token);
     return data;
   } catch (error) {
+    alert("Wrong email or password! Please try again");
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -49,6 +50,8 @@ export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
  * 2. Если токена нет, выходим не выполняя никаких операций
  * 3. Если токен есть, добавляет его в HTTP-заголовок и выполянем операцию
  */
+
+// RefreshUser:
  export const fetchCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {

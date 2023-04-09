@@ -7,7 +7,8 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
+// import { fetchContacts } from 'redux/operations';
+
 
 import HomePage from 'Pages/HomePage';
 
@@ -15,6 +16,7 @@ import Loader from './Loader/Loader';
 import Layout from './Layout/Layout';
 
 import { selectIsRefreshing } from 'redux/auth/authSelectors';
+import { fetchCurrentUser } from 'redux/auth/authOperations';
 import ContactsPage from 'Pages/ContactsPage';
 import LoginPage from 'Pages/LoginPage';
 import RegisterPage from 'Pages/RegisterPage';
@@ -24,7 +26,9 @@ export const App = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    // dispatch(fetchContacts());
+    dispatch(fetchCurrentUser());
+
   }, [dispatch]);
 
   return isRefreshing ? (
